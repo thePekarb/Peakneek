@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- базовые переменные ---------- */
+:root {
+  --bg: linear-gradient(135deg, #6EE7B7 0%, #3B82F6 100%);
+}
+
+/* ---------- базовые размеры ---------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- фон по умолчанию для всего сайта ---------- */
+body {
+  @apply min-h-screen text-gray-900;
+  background-image: var(--bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ---------- специальные фоны страниц (ПЕРЕКРЫВАЮТ общий) ---------- */
+body.auth-page {
+  /* картинка панели входа/регистрации */
+  background-image: url('/login-bg.jpg') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body.profile-page {
+  /* картинка профиля */
+  background-image: url('/profile-bg.jpg') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ---------- UI-хелперы (как были) ---------- */
+.container-glass {
+  @apply bg-white/50 backdrop-blur-md border border-white/30 shadow-xl rounded-2xl;
+}
+
+.btn { @apply px-4 py-2 rounded-xl border border-black/10 hover:shadow-md transition; }
+.btn-primary { @apply btn bg-blue-600 text-white hover:bg-blue-700; }
+.btn-ghost { @apply btn bg-white/60 hover:bg-white/80; }
+.input { @apply w-full px-3 py-2 rounded-xl border border-black/10 bg-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500; }
+.label { @apply text-sm font-medium mb-1; }
+.card { @apply container-glass p-4; }
+.section-title { @apply text-xl font-semibold mb-3; }
+.grid-2 { @apply grid grid-cols-1 md:grid-cols-2 gap-4; }
+.grid-3 { @apply grid grid-cols-1 md:grid-cols-3 gap-4; }
